@@ -75,8 +75,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-
-
+# ESLint
+* Admin cmd __ng add @angular-eslint/schematics__
 
 ### Ref
 * https://www.freecodecamp.org/news/angular-8-tutorial-in-easy-steps/
