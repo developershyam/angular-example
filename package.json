@@ -9,6 +9,9 @@
     "test": "ng test",
     "test:single": "ng test --include=**/api.service.spec.ts",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "lint:single": "ng lint --files src/app/home/home.component.ts",
+    "lint:fixsingle": "ng lint --fix --files src/app/home/home.component.ts",
     "generate": "node ./server/generate.js > ./server/database.json",
     "server": "json-server --watch ./server/database.json"
   },
