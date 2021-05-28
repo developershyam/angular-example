@@ -77,6 +77,34 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # ESLint
 * Admin cmd __ng add @angular-eslint/schematics__
+* .eslintrc.json created & verify using __ng lint__
+* Install plugin ESLint to know in VSCode
+
+# Test
+* Code coverage karma jasmin
+
+__angular.json__
+```
+"test": {
+      check: {
+        global: {
+          statements: 50,
+          branches: 0,
+          functions: 50,
+          lines: 50
+        }
+      }
+}
+```
+
+__karma.config.js__
+```
+"coverageReporter": {
+          options": {
+            "codeCoverage": true
+          }
+}
+```
 
 ### Ref
 * https://www.freecodecamp.org/news/angular-8-tutorial-in-easy-steps/

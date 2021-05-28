@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { ApiService } from './api.service';
@@ -16,5 +16,8 @@ describe('ApiService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+  it('handleError', () => {
+    service.handleError(new HttpErrorResponse({}))
   });
 });
