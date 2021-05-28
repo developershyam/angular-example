@@ -1,3 +1,4 @@
+import { Product } from './../../model/app.model';
 import { ApiService } from './../../service/api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,13 +17,4 @@ export class HomeComponent implements OnInit {
 			this.products = data;  
 		})  
 	}
-}
-
-export class Product {
-  id: number = 0;
-  name: string = '';
-  price: string = ''
-  quantity: number = 0;
-  imageUrl: string = '';
-  description: string = '';
 }
