@@ -1,9 +1,16 @@
 
 
 # Install Node & NPM
+> Download Node https://nodejs.org/en/download/ 
 
 # Install angular cli
 > npm install -g @angular/cli 
+
+> ng add @angular/material
+
+> ng install
+
+[Angular CLI](https://angular.io/cli)  is the official tool for initializing and working with Angular projects. Head to a new terminal and execute the following command:
 
 # How to start app
 * In first terminal/cmd __npm run server__
@@ -29,20 +36,20 @@ ng new Angular-Sample-App
   "server": "json-server --watch ./server/database.json"
 
 * Creating a Service for Consuming the REST API with Angular HttpClient \
-  ng g service api \
+  ng g service api
 
 
 # or create a new repository on the command line
-echo "# angular-example" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/developershyam/angular-example.git
+echo "# angular-example" >> README.md \
+git init \
+git add README.md \
+git commit -m "first commit" \
+git branch -M main \
+git remote add origin https://github.com/developershyam/angular-example.git \
 git push -u origin main
 # or push an existing repository from the command line
-git remote add origin https://github.com/developershyam/angular-example.git
-git branch -M main
+git remote add origin https://github.com/developershyam/angular-example.git \
+git branch -M main \
 git push -u origin main
 
 
@@ -108,3 +115,4 @@ __karma.config.js__
 
 ### Ref
 * https://www.freecodecamp.org/news/angular-8-tutorial-in-easy-steps/
+* https://www.positronx.io/angular-8-reactive-forms-validation-with-angular-material-8/

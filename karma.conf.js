@@ -46,7 +46,14 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: true,
-    restartOnFileChange: true
+    //browsers: ['ChromeDebugging'],
+    singleRun: false,
+    restartOnFileChange: true,
+    /*customLaunchers: {
+      ChromeDebugging: {
+        base: 'Chrome',
+        flags: ['--remote-debugging-port=8080'],
+        debug: true
+   }}*/
   });
 };

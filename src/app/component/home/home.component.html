@@ -3,7 +3,7 @@
 
     <mat-card *ngFor="let product of products; let i = index" style="margin-top:10px;">
         <mat-card-header>
-            <mat-card-title>{{i+1}}. {{product.name}}</mat-card-title>
+            <strong><mat-card-title>{{i+1}}. {{product.name}}</mat-card-title></strong> 
             <mat-card-subtitle>{{product.price}} $/ {{product.quantity}}
             </mat-card-subtitle>
         </mat-card-header>
@@ -16,5 +16,6 @@
         <mat-card-actions>
       <button mat-button> Buy product</button>
     </mat-card-actions>
+    <br/><br/>
     </mat-card>
 </div>
