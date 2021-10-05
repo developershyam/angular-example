@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, ValidationErrors } from "@angular/forms";
 import { OnInit } from '@angular/core';
 
 export interface Subject {
@@ -19,10 +19,12 @@ export class MatComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   myForm: FormGroup;
+  myValue = "abc"
   @ViewChild('chipList', { static: true }) chipList: any;
   gradeArray: any = ['8th Grade', '9th Grade', '10th Grade', '11th Grade', '12th Grade'];
   subjectsArray: Subject[] = [];
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  errors: any = [];
 
   constructor(public fb: FormBuilder) {
     this.myForm = this.fb.group({
@@ -52,13 +54,13 @@ export class MatComponent implements OnInit {
   }
 
   /* Date */
-    date(e: any) {
-      var convertDate = new Date(e.target.value).toISOString().substring(0, 10);
-      this.myForm.get('dob')?.setValue(convertDate, {onlyself: true});
-      
-    }
+  date(e: any) {
+    var convertDate = new Date(e.target.value).toISOString().substring(0, 10);
+    this.myForm.get('dob')?.setValue(convertDate, { onlyself: true });
 
-      /* Add dynamic languages */
+  }
+
+  /* Add dynamic languages */
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -78,15 +80,31 @@ export class MatComponent implements OnInit {
     if (index >= 0) {
       this.subjectsArray.splice(index, 1);
     }
-  }  
+  }
 
-  /* Handle form errors in Angular 8 */
+  /* Handle form errors */
   public errorHandling = (control: string, error: string) => {
     return this.myForm.controls[control].hasError(error);
   }
 
   submitForm() {
+    this.errors = [];
+
+    Object.keys(this.myForm.controls).forEach(key => {
+
+      const controlErrors = this.myForm.get(key)?.errors;
+      if (controlErrors != null) {
+        Object.keys(controlErrors).forEach(keyError => {
+          const showMessage = key + " is " + keyError
+          this.errors.push(showMessage)
+        });
+      }
+    });
+
+    console.log('form submit ----------------------')
+    console.log('errors:' + this.errors)
     console.log(this.myForm.value)
+
   }
 
 }

@@ -1,64 +1,73 @@
-<div style="margin-left: 20px;">
-    <mat-sidenav-container>
-        <mat-sidenav-content>
-            <form [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
+<div style="margin-left: 30px;">
+    
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
+        <h1> User Details</h1>
+        <!-- Name -->
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" formControlName="name">
+            <!-- error -->
+            <mat-error *ngIf="errorHandling('name', 'required')">
+                You must provide <strong>name</strong>
+            </mat-error>
+        </mat-form-field>
 
-                <!-- Name -->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Name" formControlName="name">
-                </mat-form-field>
+        <!-- Email -->
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
 
-                <!-- Email -->
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" formControlName="email">
-                </mat-form-field>
+        <!-- Gender -->
+        <div class="misc-bottom-padding">
+            <mat-label>Gender:</mat-label>
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+            </mat-radio-group>
+        </div>
 
-                <!-- Gender -->
-                <div class="misc-bottom-padding">
-                    <mat-label>Gender:</mat-label>
-                    <mat-radio-group aria-label="Select an option" formControlName="gender">
-                        <mat-radio-button value="Male">Male</mat-radio-button>
-                        <mat-radio-button value="Female">Female</mat-radio-button>
-                    </mat-radio-group>
-                </div>
+        <!-- Date picker -->
+        <mat-form-field>
+            <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
+                (dateChange)="date($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-                <!-- Date picker -->
-                <mat-form-field>
-                    <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
-                        (dateChange)="date($event)">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
+        <!-- Class -->
+        <mat-form-field>
+            <mat-label>Grade</mat-label>
+            <mat-select formControlName="grade">
+                <mat-option [value]="grade" *ngFor="let grade of gradeArray">{{grade}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-                <!-- Class -->
-                <mat-form-field>
-                    <mat-label>Grade</mat-label>
-                    <mat-select formControlName="grade">
-                        <mat-option [value]="grade" *ngFor="let grade of gradeArray">{{grade}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
+        <!-- Add Subjects -->
+        <mat-form-field class="multiple-items">
+            <mat-chip-list #chipList>
+                <mat-chip *ngFor="let subject of subjectsArray" [selectable]="selectable" [removable]="removable"
+                    (removed)="remove(subject)">
+                    {{subject.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Add subjects" [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+        </mat-form-field>
 
-                <!-- Add Subjects -->
-                <mat-form-field class="multiple-items">
-                    <mat-chip-list #chipList>
-                        <mat-chip *ngFor="let subject of subjectsArray" [selectable]="selectable"
-                            [removable]="removable" (removed)="remove(subject)">
-                            {{subject.name}}
-                            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                        </mat-chip>
-                        <input placeholder="Add subjects" [matChipInputFor]="chipList"
-                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
-                            (matChipInputTokenEnd)="add($event)">
-                    </mat-chip-list>
-                </mat-form-field>
+        <!-- Submit -->
+        <div class="button-wrapper">
+            <button mat-flat-button color="primary">Submit</button>
+        </div>
 
-                <!-- Submit -->
-                <div class="button-wrapper">
-                    <button mat-flat-button color="primary">Submit</button>
-                </div>
+    </form>
 
-            </form>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+    <mat-divider></mat-divider>
+    <div style="font-size: 1.5em;">
+        Input testing binding : &nbsp;&nbsp;
+        <input [(ngModel)]= "myValue" /> &nbsp;&nbsp;
+        <span style="color: {{myValue}}">{{myValue}}</span>
+    </div>
+    <br/><br/><br/>
 </div>
