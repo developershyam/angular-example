@@ -19,7 +19,6 @@ export class MatComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   myForm: FormGroup;
-  myValue = "abc"
   @ViewChild('chipList', { static: true }) chipList: any;
   gradeArray: any = ['8th Grade', '9th Grade', '10th Grade', '11th Grade', '12th Grade'];
   subjectsArray: Subject[] = [];

@@ -1,1 +1,30 @@
-<p style="padding: 15px;"> This is the about page that describes your app</p>
+
+<div style="font-size: 1.5em; padding: 15px;">
+    <br/>
+    {{title}}
+    <br/><br/>
+
+    <p > This is the about page that describes your app</p>
+    <br/><br/>
+
+    
+    <div >
+        Input testing binding : &nbsp;&nbsp;
+        <input [(ngModel)]= "myValue" /> &nbsp;&nbsp;
+        <span style="color: {{myValue}}">{{myValue}}</span>
+    </div>
+    <br/><br/><br/>
+    
+    Test event: <input type="button" value="Click here!"  (click)="myFun()"/>
+    <br/><br/><br/>
+
+    Test ng-if <input type="checkbox" [(ngModel)]="showMyDiv" />
+    <div *ngIf="showMyDiv">
+        This is dynamic div addedto DOM
+    </div>
+    <br/><br/><br/>
+
+</div>
+
+
+
