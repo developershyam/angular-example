@@ -3,6 +3,10 @@
 # Install Node & NPM
 > Download Node https://nodejs.org/en/download/ 
 
+# Install Visual Studio Code
+> Download Node https://code.visualstudio.com/download
+
+
 # Install angular cli
 > npm install -g @angular/cli 
 
