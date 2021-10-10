@@ -1,0 +1,86 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div style="text-align: center" class="{{msgClass}}">
+    <h1>{{message}}</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">User Registration.</legend>
+
+                    <div class="form-group">
+                        <label for="Name"><span class="req">* </span> Name: <small>This will be your login user
+                                name</small> </label>
+                        <input required type="text" [(ngModel)]="user.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstname"><span class="req">* </span> Email: </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.email" name="email" id="txt" required
+                            placeholder="Enter valid email address" />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname"><span class="req">* </span> Experience : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.experience" name="experience" id="txt"
+                            placeholder="Total year of experience" required />
+                        <div id="errLast"></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register"
+                            (click)="registerNow()">
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+        <div class="row">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12" style="text-align: center">
+                    <input type="text" class="search-query form-control" placeholder="Search name"
+                        [(ngModel)]="userName" (keyup)="findUsersByName()" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button" (click)="findUsersByName()">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+            <table class="table table-striped custab">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Experience</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.experience}}</td>
+                        <td class="text-center"><button class="btn btn-danger btn-xs"
+                                (click)="delteUser(user.email)"><span class="glyphicon glyphicon-remove"></span>
+                                Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

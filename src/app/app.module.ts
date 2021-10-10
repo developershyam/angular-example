@@ -1,7 +1,12 @@
+import { Child2Component } from './component/parent-child/child2.component';
+import { Child1Component } from './component/parent-child/child1.component';
+import { ParentComponent } from './component/parent-child/parent.component';
+import { ProductComponent } from './component/product/product.component';
+import { UserService } from './service/user.service';
+import { ManageUsersComponent } from './component/manage-users/manage-users.component';
 import { MaterialModule } from './component/material.module';
 import { MatComponent } from './component/mat/mat.component';
 import { AboutComponent } from './component/about/about.component';
-import { HomeComponent } from './component/home/home.component';
 import { AppComponent } from './component/app.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,9 +24,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    ProductComponent,
     AboutComponent,
-    MatComponent
+    MatComponent,
+    ManageUsersComponent,
+    ParentComponent,
+    Child1Component,
+    Child2Component
 
   ],
   imports: [
@@ -33,7 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

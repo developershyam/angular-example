@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ProductService {
 
   private SERVER_URL = "http://localhost:3000/products";
 

@@ -1,15 +1,20 @@
+import { ParentComponent } from './component/parent-child/parent.component';
+import { ProductComponent } from './component/product/product.component';
+import { ManageUsersComponent } from './component/manage-users/manage-users.component';
 import { MatComponent } from './component/mat/mat.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
 
 
 const routes: Routes = [
   //{ path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'manage-users', component: ManageUsersComponent },
   { path: 'about', component: AboutComponent },
   { path: 'mat', component: MatComponent },
+  { path: 'parent-child', component: ParentComponent },
+  
 ];
 
 @NgModule({
