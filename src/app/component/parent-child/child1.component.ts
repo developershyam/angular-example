@@ -8,7 +8,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class Child1Component implements OnInit, OnDestroy {
 
-  @Input() msg = ''; 
+  @Input() msg = 'default value';
   
   constructor() {}
 
@@ -20,6 +20,10 @@ export class Child1Component implements OnInit, OnDestroy {
   ngOnDestroy() {
     
     console.log('Child1Component ....OnDestroy')
+  }
+
+  recievedEvenFromParent(data: any) {
+    console.log('Child-1: recievedEvenFromParent...' + data)
   }
 
 }

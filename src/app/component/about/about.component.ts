@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 /* eslint-disable @angular-eslint/no-conflicting-lifecycle */
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -14,7 +15,15 @@ export class AboutComponent implements OnInit, OnChanges, DoCheck, AfterViewInit
   title = "About Page"
   showMyDiv = false;
   order = 1;
-  constructor() {
+  isBlue = true;
+
+  testPipe = 'This is to test Pipe'
+  todaydate = new Date();  
+  jsonval = {name: 'Alex', age: '25', address:{a1: 'Paris', a2: 'France'}};  
+  months = ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun',  
+    'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];  
+
+  constructor(private router: Router) {
     console.log('AboutComponent constructor()!! and my order::::' + this.order);
     this.order++;
   }
@@ -61,7 +70,12 @@ export class AboutComponent implements OnInit, OnChanges, DoCheck, AfterViewInit
 
   myFun() {
     // alert('button clicked')
+    this.testPromise()
     this.testObservable();
+  }
+
+  navigate() {
+    this.router.navigate(['/product'])
   }
 
 

@@ -1,3 +1,5 @@
+import { SqrtPipe } from './pipe/sqrt.pipe';
+import { MyBgDirective } from './directive/my-bg.directive';
 import { Child2Component } from './component/parent-child/child2.component';
 import { Child1Component } from './component/parent-child/child1.component';
 import { ParentComponent } from './component/parent-child/parent.component';
@@ -30,7 +32,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ManageUsersComponent,
     ParentComponent,
     Child1Component,
-    Child2Component
+    Child2Component,
+    MyBgDirective,
+    SqrtPipe
 
   ],
   imports: [

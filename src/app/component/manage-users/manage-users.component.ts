@@ -58,12 +58,12 @@ export class ManageUsersComponent implements OnInit {
     });
   }
 
-  clearMsg(inSec: number) {
+  clearMsg(inMillis: number) {
     const _self = this;
     setTimeout(function() {
       _self.message = '';
       _self.msgClass = ''
-    }, inSec)
+    }, inMillis)
   }
 
 }

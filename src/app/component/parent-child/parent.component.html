@@ -1,11 +1,13 @@
 <div style="font-size: 1.5em; padding: 15px; border-style: groove; border-width: 7px; border-color: coral;">
     <h3> This is Parent</h3>
 
+    <button (click)="toggleChild()">Toggle Child</button>
     <br /><br />
-    <app-child1 [msg]="'This is from Parent for Child-1'"></app-child1>
+    <app-child1 *ngIf="showChild" [msg]="'This is from Parent for Child-1'"></app-child1>
 
+   
     <br /> <br /><br />
-    <app-child2 [msg]="'This is from Parent for Child-2'" 
+    <app-child2 [hidden]="!showChild" [msg]="'This is from Parent for Child-2'" 
     (childEventEmitter)="receivedChildEventInParent($event)"></app-child2>
 
 </div>

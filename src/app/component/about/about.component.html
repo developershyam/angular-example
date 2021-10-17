@@ -1,30 +1,69 @@
-
 <div style="font-size: 1.5em; padding: 15px;">
-    <br/>
+    <br />
     {{title}}
-    <br/><br/>
+    <br /><br />
 
-    <p > This is the about page that describes your app</p>
-    <br/><br/>
+    <p> This is the about page that describes your app</p>
+    <br /><br />
 
-    
-    <div >
+    <button (click)="navigate()">Navigate on event</button>
+    <br /><br />
+
+
+    <div>
         Input testing binding : &nbsp;&nbsp;
-        <input [(ngModel)]= "myValue" /> &nbsp;&nbsp;
+        <input [(ngModel)]="myValue" /> &nbsp;&nbsp;
         <span style="color: {{myValue}}">{{myValue}}</span>
     </div>
-    <br/><br/><br/>
-    
-    Test event: <input type="button" value="Click here!"  (click)="myFun()"/>
-    <br/><br/><br/>
+    <br /><br /><br />
+
+    Test event: <input type="button" value="Click here!" (click)="myFun()" />
+    <br /><br />
 
     Test ng-if <input type="checkbox" [(ngModel)]="showMyDiv" />
     <div *ngIf="showMyDiv">
         This is dynamic div addedto DOM
     </div>
-    <br/><br/><br/>
+    <br /><br />
 
+    <p [ngStyle]="{'background': isBlue ? 'blue' : 'red'}"> This is Attribute Directive</p>
+
+    <br /><br />
+    <div app-my-bg>This is my custome Directive</div>
+    <br /><br />
+
+    <div>Without pipe: {{testPipe }}</div>
+    <div>Using uppercase pipe: {{testPipe | uppercase }}</div>
+    <br /><br />
+    <div style="width:100%;">
+        <div style="width:40%;float:left;border:solid 1px black;">
+            <h1>Uppercase Pipe</h1>
+            <b>{{title | uppercase}}</b><br />
+            <h1>Lowercase Pipe</h1>
+            <b>{{testPipe | lowercase}}</b>
+            <h1>Currency Pipe</h1>
+            <b>{{6589.23 | currency:"USD"}}</b><br />
+            <b>{{6589.23 | currency:"USD":true}}</b>
+            <h1>Date pipe</h1>
+            <b>{{todaydate | date:'d/M/y'}}</b><br />
+            <b>{{todaydate | date:'shortTime'}}</b>
+            <h1>Decimal Pipe</h1>
+            <b>{{ 454.78787814 | number: '3.4-4' }}</b>
+        </div>
+        <div style="width:40%;float:left;border:solid 1px black;">
+            <h1>Json Pipe</h1>
+            <b>{{ jsonval | json }}</b>
+            <h1>Percent Pipe</h1>
+            <b>{{00.54565 | percent}}</b>
+            <h1>Slice Pipe</h1>
+            <b>{{months | slice:2:6}}</b>
+            // here 2 and 6 refers to the start and the end index
+        </div>
+    </div>
+    <br /><br />
+    <div style="clear: both;"></div>
+    <h1>Example of Custom Pipe</h1>
+    <h2>Square root of 625 is: {{625 | sqrt}}</h2><br />
+    <h2>Square root of 169 is: {{169 | sqrt}}</h2>
+    <br /><br />
 </div>
-
-
-

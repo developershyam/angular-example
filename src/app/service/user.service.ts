@@ -12,6 +12,7 @@ export class UserService {
   private users: User[] = new Array<User>();
 
   constructor(private http: HttpClient) {
+    this.users.push(new User('Abc'));
     this.users.push(new User('Jon', 'jon@abc.com'));
     this.users.push(new User('Shyam', 'shyam@pareek.com', 8));
   }
