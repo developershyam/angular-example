@@ -1,7 +1,7 @@
 {
   "name": "angular-example",
   "version": "0.0.0",
-  "": {
+  "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start:prod": "ng serve --configuration production",
@@ -14,7 +14,7 @@
     "lint:single": "ng lint --files src/app/home/home.component.ts",
     "lint:fixscriptssingle": "ng lint --fix --files src/app/home/home.component.ts",
     "generate": "node ./server/generate.js > ./server/database.json",
-    "server": "json-server --watch ./server/database.json"
+    "json-server": "json-server --watch ./server/database.json"
   },
   "private": true,
   "dependencies": {

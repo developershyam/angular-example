@@ -8,6 +8,7 @@
    
     <br /> <br /><br />
     <app-child2 [hidden]="!showChild" [msg]="'This is from Parent for Child-2'" 
-    (childEventEmitter)="receivedChildEventInParent($event)"></app-child2>
+    [user]="user" (childEventEmitter)="receivedChildEventInParent($event)"></app-child2>
+    <br/> In Parent childData: {{childData}}
 
 </div>

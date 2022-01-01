@@ -68,10 +68,12 @@ export class AboutComponent implements OnInit, OnChanges, DoCheck, AfterViewInit
     this.order++;
   }
 
-  myFun() {
-    // alert('button clicked')
+  testAsync() {
+    console.log("testAsync .. called --1")
     this.testPromise()
+    console.log("testAsync .. called --2")
     this.testObservable();
+    console.log("testAsync .. called --3")
   }
 
   navigate() {
@@ -93,9 +95,9 @@ export class AboutComponent implements OnInit, OnChanges, DoCheck, AfterViewInit
       data.next(1);
       data.next(2);
       data.next(3);
-      });
+    });
 
-      observable.subscribe(element => console.log('Observable ' + element));
+   observable.subscribe(element => console.log('Observable ' + element));
   }
 
 }

@@ -1,3 +1,4 @@
+import { User } from './../../model/user.model';
 import { Child2Component } from './child2.component';
 import { Child1Component } from './child1.component';
 import { Observable } from 'rxjs';
@@ -16,6 +17,8 @@ export class ParentComponent implements OnInit, OnDestroy {
   constructor() {}
   myMsg= "This is from parent ts file"
   showChild=true;
+  childData= '';
+  user =new User('Shyam', 'shyam@test.com', 8);
 
   toggleChild() {
 
@@ -34,6 +37,7 @@ export class ParentComponent implements OnInit, OnDestroy {
 
   receivedChildEventInParent(data: any) {
     console.log('Parent receivedChildEventInParent() .. '+ data)
+    this.childData = data; 
 
     this.child1?.recievedEvenFromParent(data)
   }

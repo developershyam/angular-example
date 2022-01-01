@@ -6,18 +6,18 @@
     <p> This is the about page that describes your app</p>
     <br /><br />
 
-    <button (click)="navigate()">Navigate on event</button>
+    <button (click)="navigate()">Navigate to Product</button>
     <br /><br />
 
 
     <div>
-        Input testing binding : &nbsp;&nbsp;
+        Input testing binding(try color i.e. red,green...): &nbsp;&nbsp;
         <input [(ngModel)]="myValue" /> &nbsp;&nbsp;
         <span style="color: {{myValue}}">{{myValue}}</span>
     </div>
     <br /><br /><br />
 
-    Test event: <input type="button" value="Click here!" (click)="myFun()" />
+    Test aync Promise/Observable (in console) : <input type="button" value="Click here!" (click)="testAsync()" />
     <br /><br />
 
     Test ng-if <input type="checkbox" [(ngModel)]="showMyDiv" />

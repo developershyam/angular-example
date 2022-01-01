@@ -17,7 +17,7 @@
 [Angular CLI](https://angular.io/cli)  is the official tool for initializing and working with Angular projects. Head to a new terminal and execute the following command:
 
 # How to start app
-* In first terminal/cmd __npm run server__
+* In first terminal/cmd __npm run json-server__
 * In second terminal/cmd __npm run start__
 
 
