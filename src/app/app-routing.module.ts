@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'mat', component: MatComponent },
   { path: 'parent-child', component: ParentComponent },
   { path: 'semanctic-ui', component: SemanticUIComponent },
+  { path: 'customers', loadChildren: () => import('./component/lazy-module/customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'orders', loadChildren: () => import('./component/lazy-module/orders/orders.module').then(m => m.OrdersModule) },
   
 ];
 
