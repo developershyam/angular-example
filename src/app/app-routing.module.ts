@@ -1,3 +1,4 @@
+import { SemanticUIComponent } from './component/semantic-ui/semantic-ui.component';
 import { ParentComponent } from './component/parent-child/parent.component';
 import { ProductComponent } from './component/product/product.component';
 import { ManageUsersComponent } from './component/manage-users/manage-users.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'mat', component: MatComponent },
   { path: 'parent-child', component: ParentComponent },
+  { path: 'semanctic-ui', component: SemanticUIComponent },
   
 ];
 

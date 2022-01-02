@@ -1,3 +1,4 @@
+import { SemanticUIComponent } from './component/semantic-ui/semantic-ui.component';
 import { SqrtPipe } from './pipe/sqrt.pipe';
 import { MyBgDirective } from './directive/my-bg.directive';
 import { Child2Component } from './component/parent-child/child2.component';
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Child1Component,
     Child2Component,
     MyBgDirective,
-    SqrtPipe
+    SqrtPipe,
+    SemanticUIComponent
 
   ],
   imports: [
